@@ -8,18 +8,8 @@ title: cory's Webpage
 
 ## introduction
 
-**Bold Text**
-_Italic Text_
-**_Bold and italic Text_**
-
-## Research Question
-
-* Bullet Point 1
-* Bullet Point 2
-* Bullet Point 3
-
-## Background
- ![image caption](https://idealab.asu.edu/assets/images/research/jumper1.png)
+**Block Diagram**
+ ![image caption](https://raw.githubusercontent.com/Calewi12/calewi12.github.io/refs/heads/main/Media/Project314_team304.png)
 
  [link to background](/background)
 
