@@ -1,19 +1,17 @@
 ---
-title: cory's Webpage
+title: Cory Lewis,B.S. Electrical systems(in progress) Webpage
 ---
 
-# home
+# Motor to control a box fan
 
 
 
-## introduction
+## Block Diagram
 
-**Block Diagram**
+**Actuator subsystem**
  ![image caption](https://raw.githubusercontent.com/Calewi12/calewi12.github.io/refs/heads/main/Media/Project314_team304.png)
 
- [link to background](/background)
-
- ## Results
+  ## Results
   1. Numbered point 1
   2. Numbered point 2
   3. Numbered point 3
@@ -24,4 +22,3 @@ title: cory's Webpage
 
 [example link to idealab](https://idealab.asu.edu)
 
-## References
