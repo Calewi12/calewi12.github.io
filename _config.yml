@@ -1,1 +1,8 @@
 theme: jekyll-theme-cayman
+title: My Website
+description: My GitHub Pages Site
+
+# Add navigation links
+header_pages:
+  - index.md
+  - Component_Selection.md
