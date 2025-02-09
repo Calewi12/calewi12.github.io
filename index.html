@@ -5,19 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cory Lewis | My Website</title>
     <style>
-        /* Change hyperlink color */
-        a {
-            color: blue; /* Change this to any color you like */
-            text-decoration: none; /* Removes underline */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            padding: 20px;
+            color: #333;
         }
+
+        /* Title styling */
+        h1 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #3366cc; /* Blue color */
+            margin-bottom: 20px;
+        }
+
+        /* Links styling */
+        a {
+            color: #3366cc; /* Blue color */
+            text-decoration: none;
+            font-size: 18px;
+        }
+
         a:hover {
-            color: red; /* Changes color when hovered over */
+            text-decoration: underline;
+            color: #003366; /* Darker blue when hovered */
+        }
+
+        /* Section headings */
+        h2 {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+
+        /* Add spacing */
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Styling for website contents section */
+        .contents {
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
+
+    <!-- Website Title -->
     <h1><a href="https://calewi12.github.io/">CoryLewis304.github.io</a></h1>
+
+    <!-- Introduction Section -->
     <h2>Introduction</h2>
     <p>Welcome to my website, assignments are listed below.</p>
+
+    <!-- Website Contents Section -->
+    <h2>Website Contents</h2>
+    <div class="contents">
+        <a href="block-diagram.html">Block Diagram</a> |
+        <a href="component-selection.html">Component Selection</a>
+    </div>
+
 </body>
 </html>
