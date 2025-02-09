@@ -1,5 +1,5 @@
----
-title: Cory Lewis's 314 Homepage
----
+# [CoryLewis304.github.io](https://calewi12.github.io)
 
-# My Subsystem Intro
+Introduction <a name="introduction"></a>
+
+Welcome to my website, assignments are listed below
