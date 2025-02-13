@@ -259,11 +259,9 @@
                         </td>
                         <td>
                             <ul>
-                                <li>Overkill given the project requirements</li>
-                                <li>Slower internal clock (20MHz)</li>
-                                <li>Requires reflow oven for heatsync</li>
-                                <li>Form factor makes soldering more difficult</li>
-                                <li>Requires an AVR programmer</li>
+                                <li>Less RAM than the PIC18F47Q10 (3.9 KB vs. 8 KB).</li>
+                                <li>Lacks some advanced features like CIP & CRC found in the PIC18F47Q10.</li>
+                                <li>Limited documentation/support compared to older PICs</li>
                             </ul>
                         </td>
                         <td>
@@ -280,16 +278,17 @@
                         </td>
                         <td>
                             <ul>
-                                <li>Extremely small</li>
-                                <li>Extremely cheap</li>
-                                <li>Programmed using MPLab</li>
-                                <li>Few pins to solder</li>
+                                <li>Simple & widely used, making it easy to find documentation & support.</li>
+                                <li>Lower cost than the others.</li>
+                                <li>Basic peripherals sufficient for simpler applications.</li>
+                                <li>5V operation, making it good for direct interface with TTL components.</li>
                             </ul>
                         </td>
                         <td>
                             <ul>
-                                <li>Requires multiplexing for input/outputs</li>
-                                <li>Very slow internal oscillator (16MHz)</li>
+                                <li>Smallest Flash (32 KB) & RAM (1.5 KB).</li>
+                                <li>Slower clock speed (40 MHz max vs. 64 MHz on others).</li>
+                                <li>Limited peripherals (only 1 UART, 1 I2C, 1 SPI, fewer ADC & PWM channels).</li>
                             </ul>
                         </td>
                         <td>
