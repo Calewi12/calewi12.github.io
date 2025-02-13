@@ -414,16 +414,16 @@
                         </td>
                         <td>
                             <ul>
-                                <li>Extremely small</li>
-                                <li>Very few pins to solder</li>
-                                <li>Very little external support hardware</li>
-                                <li>Output amperage only 150% required</li>
+                                <li>Unlike standard regulators, it can operate with a small voltage difference (1.2V) between input and output, which is useful if your input voltage is just slightly above the required output.</li>
+                                <li>Requires minimal external components (just a few capacitors), making it easy to integrate into your design.</li>
+                                <li>Available in fixed outputs (1.8V, 2.5V, 3.3V, 5V) and an adjustable version (1.25V – 13.8V).</li>
+                                <li>Provides a stable voltage with good line and load regulation (0.2% and 0.4%), reducing fluctuations in power-sensitive components like your PIC18F47Q10.</li>
                             </ul>
                         </td>
                         <td>
                             <ul>
-                                <li>Marginally more expensive than alternatives</li>
-                                <li>Maximum voltage input only 5.5V</li>
+                                <li>Being a linear regulator, it converts excess power into heat, requiring a heat sink for higher input voltages.</li>
+                                <li>Not suitable for high-power applications like driving DC motors directly. Your motor and motor driver may require several amps, which the LM338 (5A) or a switching regulator like LM2575 (1A) would handle better.</li>
                             </ul>
                         </td>
                         <td>
