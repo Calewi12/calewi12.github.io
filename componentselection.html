@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Define the viewport, and set page zoom to 1.0 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component Selection</title>
+
+    <!-- CSS -->
+    <style>
+        /* General Styling */
+        body {
+            background-color: #001F3F;
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 20px;
+            font-weight: bolder
+        }
+
+        /* Header formatting */
+        h1 {
+            font-size: 3em;
+            color: #ffffff;
+            background-color:#001F3F;
+            border-radius: 10px;
+            text-align: center;
+            padding: 10px;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            color: #ffffff;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            color: #000000;
+            background-color: rgb(255, 255, 255);
+            display: inline-block;
+            padding: 7px;
+            border-radius: 10px;
+        }
+
+        /* Top paragraph styling */
+        pt {
+            font-size: 1em;
+            margin-bottom: 1em;
+            padding: 10px;
+            text-spacing-trim: 5px;
+            line-height: 2;
+            background-color: white;
+            color: black;
+            width: calc(100%-20px);
+            display: block;
+            border-radius: 10px;
+        }
+
+        /* Paragraph Styling */
+        p {
+            font-size: 1em;
+            line-height: 1.6;
+            margin-bottom: 1em;
+            color: black;
+            background-color: rgb(255, 255, 255);
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1em;
+        }
+
+        th,
+        td {
+            border: 1px solid #000000;
+            background-color: #ffffff;
+            padding: 8px;
+            color: black;
+        }
+
+        th {
+            background-color: #000000;
+            color: rgb(255, 255, 255);
+            text-align: left;
+        }
+
+        /* Image Styling */
+        .small-image {
+            width: 200px;
+        }
+
+        /* Line Break to make content easier to read*/
+        hr {
+            border: none;
+            border-top: 2px solid #ffffff;
+            margin: 20px 0;
+        }
+
+        /* Unordered List Styling */
+        ul {
+            margin: 0;
+            /* Removes default margin */
+            padding-left: 20px;
+            /* Adjusts bullet indentation */
+            color: black;
+        }
+
+        /* List item styling */
+        li {
+            line-height: 1.5;
+        }
+
+        /* Digikey logo for clickable links */
+        .digikey-link {
+            width: 100px;
+            height: 100px;
+            background-image: url("Media/DigikeySymbol.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: inline-block;
+        }
+
+        /* Dropdown container */
+        .dropdown-container {
+            width: calc(100%-20px);
+            margin: 10px;
+            background-color: rgb(177, 177, 177);
+            border-radius: 5px;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 15px;
+        }
+
+        .dropdown-container-alt {
+            width: calc(100%-20px);
+            margin: 10px;
+            background-color: rgb(199, 199, 199);
+            border-radius: 5px;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 15px;
+        }
+
+        /* Dropdown styling */
+        .dropdown {
+            cursor: pointer;
+            font-size: 24px;
+            font-weight: bold;
+            color: rgb(0, 0, 0);
+            text-decoration: underline;
+            display: inline-block;
+            margin-bottom: 10px;
+            width: calc(100%-20px);
+            margin: 5px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 25px;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding-right: 30px;
+            padding-left: 30px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        /* Dropdown hidden styling */
+        .hidden {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .show {
+            max-height: 2000px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Page Header -->
+    <h1>Individual Component Selection</h1>
+    <pt> Here I have my individual component selection. Included are both my considered options for all major
+        subsystems, as well as my justification for choosing these components.
+        Due to project requirements, through-hole components will not be considered for selection.</pt>
+
+    <!-- Line break to make page easier to read -->
+    <hr>
+
+    <h1>Major Hardware Selection</h1>
+
+    <!-- Microcontroller Dropdown -->
+    <div class="dropdown-container" id="microcontrollerContainer">
+
+        <div class="dropdown" onclick="toggleTable('Microcontroller')">Microcontroller Selection</div>
+
+        <div id="Microcontroller" class="hidden">
+
+            <p>For microcontroller selection, I am prioritizing familiarity and ease of programming.
+                Utilizing a microcontroller that supports C libraries gives the widest range of
+                potential components compared to other available languages, as well as its use within most
+                major
+                microcontroller brands.
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Image</th>
+                        <th>Advantages</th>
+                        <th>Disadvantages</th>
+                        <th>Hyperlink</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>PIC18F47Q10 TQFP/44</td>
+                        <td><img src="Media/PIC18F47Q10.png" alt="PIC Microcontroller" class="small-image">
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Familiarity with programming interface</li>
+                                <li>Inexpensive</li>
+                                <li>Plentiful documentation</li>
+                                <li>Teaching-team support</li>
+                                <li>Likely to be popular amongst students (Better community support)</li>
+                                <li>Higher internal clock (64MHz)</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Might be a little much based on the project requirements</li>
+                                <li>Restricted access to python libraries without manual labor</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a
+                                href="https://www.digikey.com/en/products/detail/microchip-technology/PIC18F47Q10-I-PT/10187786">
+                                <div class="digikey-link"></div>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>PIC18F46K22</td>
+                        <td><img src="Media/PIC18F46K22.png" alt="PIC Microcontroller"
+                                class="small-image"></td>
+                        <td>
+                            <ul>
+                                <li>Good balance of power & efficiency</li>
+                                <li>nanoWatt XLP (Extreme Low Power) technology, making it great for battery-operated applications.</li>
+                                <li>Larger Flash than PIC18F4520 (64 KB vs. 32 KB).</li>
+                                <li>Better peripherals than the PIC18F4520 (more ADC channels, PWM, and timers).</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Less RAM than the PIC18F47Q10 (3.9 KB vs. 8 KB).</li>
+                                <li>Lacks some advanced features like CIP & CRC found in the PIC18F47Q10.</li>
+                                <li>Limited documentation/support compared to older PICs</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a
+                                href="https://www.digikey.com/en/products/detail/microchip-technology/PIC18F46K22-I-MV/2601533">
+                                <div class="digikey-link"></div>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>PIC18F4520</td>
+                        <td><img src="Media/PIC18F4520.png" alt="PIC Microcontroller"
+                                class="small-image">
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Simple & widely used, making it easy to find documentation & support.</li>
+                                <li>Lower cost than the others.</li>
+                                <li>Basic peripherals sufficient for simpler applications.</li>
+                                <li>5V operation, making it good for direct interface with TTL components.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Smallest Flash (32 KB) & RAM (1.5 KB).</li>
+                                <li>Slower clock speed (40 MHz max vs. 64 MHz on others).</li>
+                                <li>Limited peripherals (only 1 UART, 1 I2C, 1 SPI, fewer ADC & PWM channels).</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a
+                                href="https://www.digikey.com/en/products/detail/microchip-technology/PIC18F4520-I-ML/613243">
+                                <div class="digikey-link"></div>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3> My Selection </h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Image</th>
+                        <th>Justification</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>PIC18F47Q10 TQFP/44</td>
+                        <td><img src="Media/PIC18F47Q10.png" alt="PIC Microcontroller" class="small-image">
+                        </td>
+                        <td>Project scope will likely be defined by my ability to integrate other systems
+                            with the microcontroller
+                            , availability of information, both provided and sourced, will be integral to
+                            final system functionality.
+                            Other students using this microcontroller will give access to a wide knowledge
+                            base, and the labs we do
+                            leading up to the final project will help develop my skills with this specific
+                            controller
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <!-- Regulator Dropdown -->
+    <div class="dropdown-container-alt" id="powerRegulatorContainer">
+
+        <div class="dropdown" onclick="toggleTable('Power Regulator')">Power Regulator Selection</div>
+
+        <div id="Power Regulator" class="hidden">
+
+            <p>For power regulator selection, I am prioritizing ease of use and minimal support components.
+                This will maximize the time I have to work on more interesting subsystems, and reduce the risk
+                of component failure. Ideally a fixed-output regulator for ease-of-use. It also must be capable of
+                producing the power required to drive the microcontroller and motor driver logic circuit.
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Image</th>
+                        <th>Advantages</th>
+                        <th>Disadvantages</th>
+                        <th>Hyperlink</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>LM338T-NOPB</td>
+                        <td><img src="Media/LM338.png" alt="Voltage Regulator" class="small-image">
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Reliable</li>
+                                <li>Used through-hole version in previous course</li>
+                                <li>Minimal supporting hardware</li>
+                                <li>Fixed output at microcontroller voltage</li>
+                                <li>Output current not significantly higher than required</li>
+                                <li>Excellent documentation and customer support</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Significantly more expensive than alternatives</li>
+                                <li>Many NC Pins contribute to footprint, but not functionality</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a
+                                href="https://www.digikey.com/en/products/detail/texas-instruments/LM338T-NOPB/212669">
+                                <div class="digikey-link"></div>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>LM2575-3.3BT</td>
+                        <td><img src="Media/LM2575-3.3BT.png" alt="Voltage Regulator" class="small-image">
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Since the LM2575 is a buck switching regulator, it wastes less power as heat, making it more efficient than the LM338.</li>
+                                <li>Inexpensive</li>
+                                <li>The LM2575 uses pulse-width modulation (PWM) to regulate voltage, meaning less energy is lost as heat compared to the LM338, which dissipates excess power as heat</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Unlike the LM338, which only needs resistors to set the voltage, the LM2575 requires an inductor, diode, and capacitors, making the circuit more complex.</li>
+                                <li>As a switching regulator, the LM2575 generates noise (EMI), which might interfere with sensitive analog circuits.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a
+                                href="https://www.digikey.com/en/products/detail/microchip-technology/lm2575-3-3bt/1027639">
+                                <div class="digikey-link"></div>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>LM1117DT-3.3/NOPB</td>
+                        <td><img src="Media/LM1117DT-3.3.png" alt="Mini-Regulator"
+                                class="small-image">
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Unlike standard regulators, it can operate with a small voltage difference (1.2V) between input and output, which is useful if your input voltage is just slightly above the required output.</li>
+                                <li>Requires minimal external components (just a few capacitors), making it easy to integrate into your design.</li>
+                                <li>Available in fixed outputs (1.8V, 2.5V, 3.3V, 5V) and an adjustable version (1.25V – 13.8V).</li>
+                                <li>Provides a stable voltage with good line and load regulation (0.2% and 0.4%), reducing fluctuations in power-sensitive components like your PIC18F47Q10.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Being a linear regulator, it converts excess power into heat, requiring a heat sink for higher input voltages.</li>
+                                <li>Not suitable for high-power applications like driving DC motors directly. Your motor and motor driver may require several amps, which the LM338 (5A) or a switching regulator like LM2575 (1A) would handle better.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a
+                                href="https://www.digikey.com/en/products/detail/texas-instruments/lm1117dt-3-3-nopb/363583">
+                                <div class="digikey-link"></div>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3> My Selection </h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Image</th>
+                        <th>Justification</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>LM338T-NOPB</td>
+                        <td><img src="Media/LM338.png" alt="Voltage Regulator" class="small-image">
+                        </td>
+                        <td>The LM338 can provide up to 5A of current, which is useful for DC motors, especially under load.
+                            Voltage output range is 1.2V to 32V (Adjustable). 
+                            High current handling, adjustable output. 
+                            
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Motor Driver Dropdown -->
+    <div class="dropdown-container" id="motordriverContainer">
+
+        <div class="dropdown" onclick="toggleTable('Motordriver')">Motor Driver Selection</div>
+
+        <div id="Motordriver" class="hidden">
+
+            <p>For motor driver selection, I appear to be severely limited. The primary reason being that many of these
+                motor drivers come
+                pre-mounted onto daughter-boards, which require justification to use (As per the project requirements).
+                Ideally the control
+                logic is at the same voltage as the microcontroller. It also requires control over a serial
+                communication interface, which
+                doesn't seem like a difficult task, but it is actually rather difficult. Many allow tuning properties,
+                such as acceleration
+                speed over a serial interface, but operate using a pulse-step system.
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Image</th>
+                        <th>Advantages</th>
+                        <th>Disadvantages</th>
+                        <th>Hyperlink</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>L6470H</td>
+                        <td><img src="media/Component_Selection/l6479h.bmp" alt="MotorDriver" class="small-image">
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Same logic-voltage as microcontroller</li>
+                                <li>Relatively-inexpensive</li>
+                                <li>Precision control over SPI</li>
+                                <li>Plenty of configuration options</li>
+                                <li>Backup systems if serial communication fails</li>
+                                <li>External clock support (Can be synced with microcontroller)</li>
+                                <li>Error pin allows diagnostics in case of serial communication failure</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Definitely overkill for the given application</li>
+                                <li>Requires a lot of support hardware to utilize all functions</li>
+                                <li>Intended for far more serious applications, meaning plenty of safety lockouts and
+                                    potential sticking points</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a href="https://www.digikey.com/en/products/detail/stmicroelectronics/L6470H/2682927">
+                                <div class="digikey-link"></div>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>EMC2301-1-ACZL-TR</td>
+                        <td><img src="media/Component_Selection/EMC2301.bmp" alt="MC Motor Driver" class="small-image">
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Very cheap </li>
+                                <li>Easy interfacing over PWM</li>
+                                <li>Configuration done over serial</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Impercise position, as it does not operate in steps</li>
+                                <li>Designed to drive fan motors, which will take adaptation to utilize for my
+                                    requirements</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a
+                                href="https://www.digikey.com/en/products/detail/microchip-technology/EMC2301-1-ACZL-TR/3872090">
+                                <div class="digikey-link"></div>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>A3908EEETR-T</td>
+                        <td><img src="media/Component_Selection/A3908EEETR.bmp" alt="Allegro Motor Driver"
+                                class="small-image">
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Very cheap </li>
+                                <li>Operates at microcontroller voltage</li>
+                                <li>Configuration over SPI</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Requires reflow oven to solder </li>
+                                <li>Low load capabilities, which may be an issue depending on motor</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a
+                                href="https://www.digikey.com/en/products/detail/allegro-microsystems/A3908EEETR-T/1991942">
+                                <div class="digikey-link"></div>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3> My Selection </h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Image</th>
+                        <th>Justification</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>L6470H</td>
+                        <td><img src="media/Component_Selection/l6479h.bmp" alt="MotorDriver" class="small-image">
+                        </td>
+                        <td>None of the options are particularly great, but looking around (And given my understanding
+                            of the requirements),
+                            it appears that this isn't a common issue. Generally stepper motors are controlled by
+                            daughter-boards or utilize
+                            onboard hardware for interfacing, which is against the rules of the assignment. If the rules
+                            change or are redefined
+                            I will likely replace this with an easier option to save time on fabrication.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Motor Dropdown -->
+    <div class="dropdown-container-alt" id="motorContainer">
+
+        <div class="dropdown" onclick="toggleTable('Motor')">Motor Selection</div>
+
+        <div id="Motor" class="hidden">
+
+            <p>For motor selection I am only looking for a few things. It needs to be easy to connect 3d printed hardware
+                to, as that is the intended interface, and it needs to be compatable with the selected motor driver, which
+                is actually very easy since the motor driver I selected is suprisingly dynamic and has plenty of tunable 
+                settings. 
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Image</th>
+                        <th>Advantages</th>
+                        <th>Disadvantages</th>
+                        <th>Hyperlink</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ROB-09238</td>
+                        <td><img src="media/Component_Selection/ROB-09238.bmp" alt="ROB Stepper" class="small-image">
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Reliable</li>
+                                <li>Used extensively for personal projects</li>
+                                <li>More than enough torque for my application</li>
+                                <li>Uses a NEMA 17 mount, so I can purchase the mount pre-manufactured</li>
+                                <li>Runs off 12V, which matches the unregulated power-input</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Designed for hobbyists, seems to have a relatively high manufacturing failure rate</li>
+                                <li>Round shaft, so set screw will be required to attach to hardware </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a
+                                href="https://www.digikey.com/en/products/detail/sparkfun-electronics/ROB-09238/5318747">
+                                <div class="digikey-link"></div>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>MIKROE-1530</td>
+                        <td><img src="media/Component_Selection/MIKROE.bmp" alt="MikroElektronika Motor" class="small-image">
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Flattened-shaft axle making external mounting trivial</li>
+                                <li>Small form-factor allows space saving</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Runs at 5v, meaning another voltage regulator would be required</li>
+                                <li>Relatively low torque may restrict other design considerations</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a
+                                href="https://www.digikey.com/en/products/detail/mikroelektronika/MIKROE-1530/5724295">
+                                <div class="digikey-link"></div>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Adafruit 324</td>
+                        <td><img src="media/Component_Selection/AdafruitMotor.bmp" alt="Adafruit Motor"
+                                class="small-image">
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Very popular for hobbist applications, plenty of online support </li>
+                                <li>Reliable, often used for 3d printers</li>
+                                <li>I already own plenty, which drives down manufacturing cost</li>
+                                <li>Flatted shaft makes hardware mounting fairly easy</li>
+                                <li>Requires 12v, which is the unregulated power supply input</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Larger than some alternatives</li>
+                                <li>More expensive than some alternatives</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a
+                                href="https://www.digikey.com/en/products/detail/adafruit-industries-llc/324/5022791">
+                                <div class="digikey-link"></div>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3> My Selection </h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Image</th>
+                        <th>Justification</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Adafruit 324</td>
+                        <td><img src="media/Component_Selection/AdafruitMotor.bmp" alt="Adafruit Motor"
+                                class="small-image"></td>
+                        <td>Component familiarity combined with access to years of online discussion makes this the
+                            superior choice. Already owning the part helps as well, as it negates the price downside. The
+                            keyed axle makes mounting it to the 3d printed components a breeze. The only comparable option
+                            would be the ROB-09238, but familiarity has immense value to me, especially given the complexity
+                            of the motor driver selected. I would rather the motor itself be the easiest part to integrate.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Toggle dropdown script -->
+    <script>
+        function toggleTable(tableId) {
+            var table = document.getElementById(tableId);
+            table.classList.toggle("show");
+        }
+    </script>
+
+</body>
+
+</html>
