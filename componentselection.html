@@ -418,21 +418,22 @@
                     </tr>
                     <tr>
                         <td>MIC29301 fixed regulator</td>
-                        <td><img src="media/LM1117DT-3.3.png" alt="Mini-Regulator"
+                        <td><img src="media/MIC29301-3.3WU.png" alt="Voltage Regulator"
                                 class="small-image">
                         </td>
                         <td>
                             <ul>
-                                <li>Unlike standard regulators, it can operate with a small voltage difference (1.2V) between input and output, which is useful if your input voltage is just slightly above the required output.</li>
-                                <li>Requires minimal external components (just a few capacitors), making it easy to integrate into your design.</li>
-                                <li>Available in fixed outputs (1.8V, 2.5V, 3.3V, 5V) and an adjustable version (1.25V – 13.8V).</li>
-                                <li>Provides a stable voltage with good line and load regulation (0.2% and 0.4%), reducing fluctuations in power-sensitive components like your PIC18F47Q10.</li>
+                                <li>Higher current capability (up to about 3A) with a much lower dropout voltage.</li>
+                                <li>Improved efficiency when the input voltage is close to the output voltage.</li>
+                                <li>Can typically supply up to around 3A.</li>
+                                <li>The MIC29301 is designed with modern low-dropout design 
+                                    techniques that often improve transient response and overall stability at higher currents.</li>
                             </ul>
                         </td>
                         <td>
                             <ul>
-                                <li>Being a linear regulator, it converts excess power into heat, requiring a heat sink for higher input voltages.</li>
-                                <li>Not suitable for high-power applications like driving DC motors directly. Your motor and motor driver may require several amps, which the LM338 (5A) or a switching regulator like LM2575 (1A) would handle better.</li>
+                                <li> The improved dropout and higher current rating can demand careful thermal management if used near its maximum current.</li>
+                                <li>Might be more costly and slightly more complex than simpler designs.</li>
                             </ul>
                         </td>
                         <td>
