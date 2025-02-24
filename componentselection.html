@@ -250,7 +250,7 @@
                     </tr>
                     <tr>
                         <td>PIC18F46K22</td>
-                        <td><img src="media/PIC18F47Q10.png" alt="PIC Microcontroller"
+                        <td><img src="media/PIC18F46K22.png" alt="PIC Microcontroller"
                                 class="small-image"></td>
                         <td>
                             <ul>
@@ -316,8 +316,8 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>PIC18F47Q10 TQFP/44</td>
-                        <td><img src="media/PIC18F47Q10.png" alt="PIC Microcontroller" class="small-image">
+                        <td>PIC18F46K40-I/PT</td>
+                        <td><img src="media/PIC18F46K40.png" alt="PIC Microcontroller" class="small-image">
                         </td>
                         <td>Project scope will likely be defined by my ability to integrate other systems
                             with the microcontroller
@@ -343,7 +343,7 @@
         <div id="Power Regulator" class="hidden">
 
             <p>For power regulator selection, I am prioritizing ease of use and minimal support components.
-                This will maximize the time I have to work on more interesting subsystems, and reduce the risk
+                This Twill maximize the time I have to work on more interesting subsystems, and reduce the risk
                 of component failure. Ideally a fixed-output regulator for ease-of-use. It also must be capable of
                 producing the power required to drive the microcontroller and motor driver logic circuit.
             </p>
@@ -361,7 +361,7 @@
                 <tbody>
                     <tr>
                         <td>LM338T-NOPB</td>
-                        <td><img src="media/LM338.png" alt="Voltage Regulator" class="small-image">
+                        <td><img src="media/LM338T.png" alt="Voltage Regulator" class="small-image">
                         </td>
                         <td>
                             <ul>
@@ -387,14 +387,16 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>LM2575-3.3BT</td>
-                        <td><img src="Media/LM2575-3.3BT.png" alt="Voltage Regulator" class="small-image">
+                        <td>LM1084-IS</td>
+                        <td><img src="Media/LM1084IS-3.3NOPB.png" alt="Voltage Regulator" class="small-image">
                         </td>
                         <td>
                             <ul>
-                                <li>Since the LM2575 is a buck switching regulator, it wastes less power as heat, making it more efficient than the LM338.</li>
+                                <li>The LM1084 is designed as a low-dropout (LDO) regulator. 
+                                    This means it can maintain regulation with a smaller difference between the input and output voltage. </li>
                                 <li>Inexpensive</li>
-                                <li>The LM2575 uses pulse-width modulation (PWM) to regulate voltage, meaning less energy is lost as heat compared to the LM338, which dissipates excess power as heat</li>
+                                <li>the LM1084 is capable of supplying significantly higher current
+                                    (up to 5A in many configurations).</li>
                             </ul>
                         </td>
                         <td>
