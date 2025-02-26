@@ -535,7 +535,7 @@
                         <td>
                             <ul>
                                 <li>Max 12A continuous might be too low for large 24V motors</li>
-                                <li></li>
+                                <li>No SPI communication, meaning limited diagnostic capabilities.</li>
                             </ul>
                         </td>
                         <td>
@@ -547,25 +547,27 @@
                     </tr>
                     <tr>
                         <td>IFX9201SGAUMA1</td>
-                        <td><img src="media/IFX9201SGAUMA1.png" alt="Allegro Motor Driver"
+                        <td><img src="media/IFX9201SGAUMA1.png" alt="Infineon Motor Driver"
                                 class="small-image">
                         </td>
                         <td>
                             <ul>
-                                <li>Very cheap </li>
-                                <li>Operates at microcontroller voltage</li>
-                                <li>Configuration over SPI</li>
+                                <li>SPI communication for advanced diagnostics, useful for monitoring faults and feedback.</li>
+                                <li>Chopper current limitation for improved motor control.</li>
+                                <li>Good protection mechanisms (short circuit, overtemperature, open load detection).</li>
+                                <li>Compact package with excellent thermal management.</li> 
                             </ul>
                         </td>
                         <td>
                             <ul>
-                                <li>Requires reflow oven to solder </li>
-                                <li>Low load capabilities, which may be an issue depending on motor</li>
+                                <li>Lower current capability (6A continuous vs. 12A on VNH5019).</li>
+                                <li>Higher RDS(ON) (100mΩ), leading to more heat dissipation.r</li>
+                                <li>Requires SPI configuration, which might complicate control for some applications.</li>
                             </ul>
                         </td>
                         <td>
                             <a
-                                href="https://www.digikey.com/en/products/detail/allegro-microsystems/A3908EEETR-T/1991942">
+                                href="https://www.digikey.com/en/products/detail/infineon-technologies/ifx9201sgauma1/5415542">
                                 <div class="digikey-link"></div>
                             </a>
                         </td>
