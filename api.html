@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>API Messaging Protocol</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: #ecf0f1;
+        }
+
+        code {
+            background-color: #eaeaea;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+        .note {
+            font-size: 0.9rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>API Message Types & Subsystem Info</h1>
+
+    <div class="section">
+        <h2>Subsystem Address Table</h2>
+        <p>This table outlines the subsystem members, their associated roles, and hexadecimal addresses.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Member</th>
+                    <th>Subsystem</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Fill in your data here -->
+                <tr>
+                    <td>Dominick Trusko</td>
+                    <td>Pitch control & Wifi</td>
+                    <td>0x06</td>
+                </tr>
+                <tr>
+                    <td>Cory Lewis</td>
+                    <td>Fan Speed Controller</td>
+                    <td>0x07</td>
+                </tr>
+                <tr>
+                    <td>Adam Quan</td>
+                    <td>Human interface</td>
+                    <td>0x08</td>
+                </tr>
+                <tr>
+                    <td>Emerson Wall</td>
+                    <td>Wind speed display</td>
+                    <td>0x09</td>
+                </tr>
+                <tr>
+                    <td>All</td>
+                    <td>All subsystems</td>
+                    <td>0x10</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Message Types</h2>
+        <p>Below is a breakdown of different types of messages that can be transmitted across subsystems, including data types, size, and descriptions.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>TX/RX</th>
+                    <th>Message Name</th>
+                    <th>Data Type</th>
+                    <th>Range</th>
+                    <th>Size</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Fill in your data here -->
+                <tr>
+                    <td>TX</td>
+                    <td>Example Msg</td>
+                    <td>uint_8</td>
+                    <td>[0–255]</td>
+                    <td>8 Bits</td>
+                    <td>Sample description here</td>
+                    <td><code>[0x01][0x10][0x2A]</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="section">
+        <h2>Messages Received by the Fan Speed Controller</h2>
+        <p>This table describes incoming UART messages and commands received from other subsystems or the WiFi system.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Message Name</th>
+                    <th>Data Type</th>
+                    <th>Data</th>
+                    <th>Size</th>
+                    <th>Sender</th>
+                    <th>Recipient</th>
+                    <th>Contents</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Fan Speed Target</td>
+                    <td>uint_8</td>
+                    <td>[0–255]</td>
+                    <td>8 Bits</td>
+                    <td>HMI (User Input)</td>
+                    <td>Fan Speed Controller</td>
+                    <td>Reports desired fan speed</td>
+                </tr>
+                <tr>
+                    <td>Reset System</td>
+                    <td>uint_8</td>
+                    <td>0xAE</td>
+                    <td>8 Bits</td>
+                    <td>WiFi System</td>
+                    <td>All Devices</td>
+                    <td>Clears all data and resets system state</td>
+                </tr>
+                <tr>
+                    <td>Emergency Stop</td>
+                    <td>uint_8</td>
+                    <td>0x99</td>
+                    <td>8 Bits</td>
+                    <td>WiFi System</td>
+                    <td>All Devices</td>
+                    <td>Immediately halts hardware operation</td>
+                </tr>
+                <tr>
+                    <td>Ready</td>
+                    <td>uint_8</td>
+                    <td>0x66</td>
+                    <td>8 Bits</td>
+                    <td>All Devices</td>
+                    <td>WiFi System</td>
+                    <td>Indicates startup completion</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="section">
+        <h2>Messages Sent by the Fan Speed Controller</h2>
+        <p>This table includes outbound messages transmitted to the rest of the system.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Message Name</th>
+                    <th>Data Type</th>
+                    <th>Data</th>
+                    <th>Size</th>
+                    <th>Sender</th>
+                    <th>Recipient</th>
+                    <th>Contents</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Current Fan Speed</td>
+                    <td>uint_8</td>
+                    <td>[0–100]</td>
+                    <td>8 Bits</td>
+                    <td>Fan Speed Controller</td>
+                    <td>WiFi System</td>
+                    <td>Reports real-time fan speed for display</td>
+                </tr>
+                <tr>
+                    <td>True Airspeed</td>
+                    <td>uint_8</td>
+                    <td>[0–255]</td>
+                    <td>8 Bits</td>
+                    <td>Fan Speed Controller</td>
+                    <td>Wind Speed Display</td>
+                    <td>Reports measured airspeed</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    
+
+    <script>
+        // Example JS for future dynamic table manipulation
+        console.log("API Page Loaded");
+    </script>
+
+</body>
+</html>
